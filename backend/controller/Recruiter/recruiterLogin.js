@@ -17,11 +17,11 @@ async function login(req, res, err) {
             // console.log(user.tokens, "Rishi")
             resp(res, { id: user._id, token: user.tokens[user.tokens.length - 1].token }, 200, "Success")
         } else {
-            res.status(400).send("Invalid Credentials")
+            resp(res, {}, 400, "Invalid Credentials")
         }
     }
     catch (err) {
-        res.status(500).send("Something went wrong")
+        resp(res, err, 500, "Something went wrong")
     }
     // res.send("User founr")
 

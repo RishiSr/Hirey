@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { MyContext } from '../MyContext';
 import { base_url } from '../base_url';
@@ -7,7 +7,7 @@ import axios from 'axios'
 
 const Sidebar = () => {
     const navigate = useNavigate();
-    const { user, setUser, hide } = useContext(MyContext);
+    const { user, setUser, hide, setHide } = useContext(MyContext);
     const [val, setVal] = useState(1);
     const logoutUser = async () => {
 
@@ -54,6 +54,12 @@ const Sidebar = () => {
 
         })
     }
+    useEffect(() => {
+        setHide(true)
+
+
+    }, [val])
+
 
     return (
         <div className={`h-screen ${hide ? "w-0" : " w-[22rem]"}  duration-300 bg-another-green relative`}>

@@ -85,46 +85,46 @@ const App = () => {
 
   console.log(user);
 
-  axios.interceptors.request.use(
-    config => {
-      console.log("rishi", config)
-      if (user) {
-        const { token } = user;
-        if (token) {
-          config.headers['Authorization'] = 'Bearer ' + token;
-        }
-      }
+  // axios.interceptors.request.use(
+  //   config => {
+  //     console.log("rishi", config)
+  //     if (user) {
+  //       const { token } = user;
+  //       if (token) {
+  //         config.headers['Authorization'] = 'Bearer ' + token;
+  //       }
+  //     }
 
-      // config.headers['Content-Type'] = 'application/json';
-      return config
-    },
-    error => {
-      Promise.reject(error)
-    }
-  )
-  axios.interceptors.response.use((res) => {
-    return res;
-  }, (err) => {
+  //     // config.headers['Content-Type'] = 'application/json';
+  //     return config
+  //   },
+  //   error => {
+  //     Promise.reject(error)
+  //   }
+  // )
+  // axios.interceptors.response.use((res) => {
+  //   return res;
+  // }, (err) => {
 
-    console.log("interceptos", (err));
-    if (err.response?.status == 401) {
-      // setUser()
-      errorToast("Unauthorised");
-      if (user?.type == "seeker") {
-        logoutUser();
-      } else if (user?.type == "recruiter") {
-        logoutRecruiter()
-      } else {
-        // window.location = "/"
-      }
-
-
-      // setUser(null);
+  //   console.log("interceptos", (err));
+  //   if (err.response?.status == 401) {
+  //     // setUser()
+  //     errorToast("Unauthorised");
+  //     if (user?.type == "seeker") {
+  //       logoutUser();
+  //     } else if (user?.type == "recruiter") {
+  //       logoutRecruiter()
+  //     } else {
+  //       // window.location = "/"
+  //     }
 
 
-    }
-    return err
-  })
+  //     // setUser(null);
+
+
+  //   }
+  //   return err
+  // })
   return (<>
     <MyContext.Provider value={{ user, setUser, hide, setHide }}>
       <Router>

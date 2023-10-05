@@ -6,9 +6,9 @@ import { MyContext } from '../MyContext'
 const HomeMng = () => {
     const { hide, setHide, user } = useContext(MyContext)
     return (
-        <div className='flex flex-row h-screen '>
+        <div className='flex flex-row h-screen  w-screen'>
             <Sidebar />
-            <div className='flex flex-col flex-1'>
+            <div className={`flex flex-col flex-1 overflow-auto ${!hide && "-sm:hidden"} `}>
                 <div className='border-b-2 py-3 px-5 text-xl flex flex-row gap-3'>
                     <button onClick={() => setHide(!hide)}>
                         <GiHamburgerMenu />
