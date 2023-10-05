@@ -10,8 +10,6 @@ The Hiring Management Software is a powerful web application designed to streaml
 
 - **Effortless Job Posting and Search**: Recruiters can effortlessly create and manage job listings, while job seekers can conveniently search for opportunities based on various criteria.
 
-- **Rock-Solid User Authentication**: User data is fortified with Passport.js, guaranteeing a secure user experience.
-
 - **Efficient Image Storage**: Cloudinary integration provides lightning-fast image storage for user profiles and job listings.
 
 - **Versatile Data Modeling**: MongoDB is harnessed for versatile data storage, including job listings and user data.
