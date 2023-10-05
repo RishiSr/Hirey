@@ -4,6 +4,8 @@ const uri = `mongodb+srv://rishisr4409:${process.env.DB_PASSWORD}@cluster0.qbcy5
 
 async function connectDB() {
     try {
+        mongoose.set("strictQuery", false);
+
         mongoose.connect(uri,
             {
                 useNewUrlParser: true, useUnifiedTopology: true
