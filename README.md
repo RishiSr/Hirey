@@ -1,6 +1,6 @@
 # Hirey
 
-[Demo]({https://hirey-mng.onrender.com)
+[Demo](https://hirey-mng.onrender.com)
 
 ## Overview
 
